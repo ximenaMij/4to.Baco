@@ -1,0 +1,61 @@
+using System;
+
+namespace Aplicación1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[,] matriz = new string[5, 15];
+            char sn = 's';
+            int op; while (sn == 's')
+            {
+                matriz[0, 0] = "Nombre";
+                matriz[1, 0] = "Apellido";
+                matriz[2, 0] = "Direccion";
+                matriz[3, 0] = "Telefono";
+                matriz[4, 0] = "Correo"; Console.Clear();
+                Console.WriteLine("Elija una opción:\n 1.Ingresar Contacto\n 2.Mostrar Contactos\n 3.Buscar");
+                op = int.Parse(Console.ReadLine()); 
+
+                if (op == 1)
+                {
+                    Console.WriteLine("Ingrese cantidad de contactos a ingresar");
+                    int numcon = int.Parse(Console.ReadLine());
+                    Console.Clear();
+                    Console.WriteLine("Ingrese los siguientes datos: Nombre, Apellido, Direccion, Telefono, Correo\n");
+                    for (int f = 1; f <= numcon; f++)
+                    {
+                        for (int a = 0; a < 5; a++)
+                        {
+                            Console.Write("Ingrese Nota [Valor:" + (f) + ", Dato:" + (a + 1) + "]: "); matriz[a, f] = Console.ReadLine();
+                        }
+                    }
+                }
+                if (op == 2)
+                {
+                    Console.Clear();
+                    Console.WriteLine("\nDatos de los Contactos: ");
+                    for (int f = 0; f < 15; f++)
+                    {
+                        Console.WriteLine(matriz[0, f] + " " + matriz[1, f] + " " + matriz[2, f] + " " + matriz[3, f] + " " + matriz[4, f]);
+                    }
+                }
+                if (op == 3)
+                {
+                    int a;
+                    Console.Clear();
+                    Console.WriteLine("Seleccione El Número de Contacto que Desea Buscar:\n");
+                    a = int.Parse(Console.ReadLine());
+                    Console.Clear();
+                    Console.WriteLine("El Contacto que busca es: " + matriz[0, a] + " " + matriz[1, a] + " " + matriz[2, a] + " " + matriz[3, a] + " " + matriz[4, a]);
+                }
+                Console.ReadKey();
+                Console.Clear();
+                Console.WriteLine("Regresar a menú principal [s/n]");
+                sn = char.Parse(Console.ReadLine());
+                Console.Clear();
+            }
+        }
+    }
+}
