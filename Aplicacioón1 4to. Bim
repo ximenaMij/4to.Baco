@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace Aplicación1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string archivo;
+            char op = 's';
+
+            while (op == 's')
+            { 
+            Console.WriteLine("Introduzca el nombre de su archivo");
+            archivo = (Console.ReadLine());
+
+
+            Console.WriteLine("El nombre de su archivo es:" + archivo + ".txt");
+
+
+
+                Console.WriteLine("Desea crear otro archivo? s/n");
+                op = char.Parse(Console.ReadLine());
+            }
+
+
+        }
+    }
+}
